@@ -13,10 +13,10 @@ export class CreditCard {
     name_card: string;
 
     @Column()
-    day_vencimento: number;
+    month_vencimento: number;
 
     @Column()
-    month_vencimento: number;
+    year_vencimento: number;
 
     @Column()
     code: number;

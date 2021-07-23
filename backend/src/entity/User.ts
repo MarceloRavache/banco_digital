@@ -15,10 +15,10 @@ export class User{
     @Column()
     password: string;
 
-    @Column()
+    @Column() 
     id_account: number;
 
-    @Column()
+    @Column() 
     id_credit_card: number;
 
 }
