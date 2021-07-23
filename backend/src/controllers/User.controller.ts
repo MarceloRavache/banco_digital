@@ -5,8 +5,6 @@ import { CreditCard } from "../entity/CreditCard";
 import { User } from "../entity/User";
 import { getDataOfAccount } from "../utils/GetDataOfAccount";
 import { getDataOfCreditCard } from "../utils/GetDataOfCreditCard";
-import { getNameCard } from "../utils/GetNameCard.utils";
-import { getNumberUniqueRandom } from "../utils/GetNumberUniqueRandom";
 
 export const getUsers = async (req: Request, res: Response): Promise<Response> => {
     const allUsers = await getRepository(User).find();
@@ -16,6 +14,7 @@ export const createUser = async (req: Request, res: Response): Promise<Response>
     if(req.body.name === '') return res.status(400).json({message:"Campo nome vazio."})
     if(req.body.email === '') return res.status(400).json({message:"Campo email vazio."})
     if(req.body.password === '') return res.status(400).json({message:"Campo senha vazio."})
+    if(req.body.cpf === '') return res.status(400).json({message:"Campo CPF vazio."})
 
     // create account
     
@@ -35,6 +34,7 @@ export const createUser = async (req: Request, res: Response): Promise<Response>
         email: req.body.email,
         name: req.body.name,
         password: req.body.password,
+        cpf: req.body.cpf,
         id_account: savedAccount.id,
         id_credit_card: savedCardCredit.id,
     }
