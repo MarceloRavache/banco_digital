@@ -15,6 +15,9 @@ export class User{
     @Column()
     password: string;
 
+    @Column()
+    cpf: string;
+
     @Column() 
     id_account: number;
 
