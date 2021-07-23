@@ -6,10 +6,11 @@ import morgan from 'morgan';
 
 import { createConnection } from "typeorm";
 
-import UserRoutes from "./routes/User/User.routes";
+import UserRoutes from "./routes/User.routes";
 
 const app = express();
 createConnection();
+
 //express configs
 app.use(cors());
 app.use(morgan('dev'));
